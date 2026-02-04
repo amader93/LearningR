@@ -32,7 +32,7 @@ post_meal_data <- read_csv2(here::here("data/post-meal-insulin.csv"))
 **Hej med dig,** *jeg er glad*
 
 ```{r}
-3*3
+3 * 3
 ```
 
 ## Showing the data
@@ -77,13 +77,22 @@ See @fig-glykemi above for a cool plot!
 
 ```{r fig-bmi-glycemia}
 #| fig-cap: "BMI and glycemia, side by side"
-#| fig-subcap: 
+#| fig-subcap:
 #|  - "Distribution of BMI"
 #|  - "Number of those with glycemia"
 #| layout-ncol: 2
 ggplot(post_meal_data, aes(x = BMI)) +
   geom_histogram()
-ggplot(post_meal_data, aes(x = glykemi)) + 
+ggplot(post_meal_data, aes(x = glykemi)) +
   geom_bar()
 ```
 
+## Plotting two continous variables
+
+```{r}
+#| fig-cap: "Scatterplot of BMI and the area under the curve for glucose"
+#| label: fig-bmi-auc-pg
+ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
+  geom_point() +
+  geom_smooth()
+```
