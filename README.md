@@ -2,7 +2,7 @@ TODO: Add more to the title of your project here
 
 # LearningR:
 
-Hi, I'm Amal
+Hi from the other side (pull)
 
 TODO: Give a brief description of what your project is about
 
